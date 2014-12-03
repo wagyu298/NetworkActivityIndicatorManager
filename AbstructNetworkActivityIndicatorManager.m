@@ -9,7 +9,7 @@ typedef NSNumber ObjectId;
 static ObjectId *
 objectId(id <NSObject> object)
 {
-    NSNumber *objectId = [NSNumber numberWithUnsignedInteger:[object hash]];
+    ObjectId *objectId = [NSNumber numberWithUnsignedInteger:[object hash]];
     return objectId;
 }
 
