@@ -2,14 +2,10 @@
 // For more information, please refer to <http://unlicense.org/>
 
 #import <Foundation/Foundation.h>
+#import "AbstructNetworkActivityIndicatorManager.h"
 
-@interface NetworkActivityIndicatorManager : NSObject
+@interface NetworkActivityIndicatorManager : AbstructNetworkActivityIndicatorManager
 
 + (NetworkActivityIndicatorManager *)sharedManager;
-
-- (void)enableNetworkActivityIndicatorWithObject:(id <NSObject>)object;
-- (void)disableNetworkActivityIndicatorWithObject:(id <NSObject>)object;
-- (void)forceDisableNetworkActivityIndicatorWithObject:(id <NSObject>)object;
-- (void)cleanup;
 
 @end
