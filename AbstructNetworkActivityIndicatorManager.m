@@ -126,6 +126,19 @@ objectId(id <NSObject> object)
     }
 }
 
+- (NSInteger)numberOfObjectEnabled:(id <NSObject>)object
+{
+    @synchronized(self) {
+        ObjectId *oid = objectId(object);
+        NetWorkActivityIndicatorManagedObject *managedObject = [self.managedObjects objectForKey:oid];
+        if (managedObject) {
+            return managedObject.count;
+        } else {
+            return 0;
+        }
+    }
+}
+
 - (void)cleanup
 {
     @synchronized(self) {

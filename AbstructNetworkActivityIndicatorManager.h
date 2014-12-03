@@ -8,6 +8,7 @@
 - (void)enableNetworkActivityIndicatorWithObject:(id <NSObject>)object;
 - (void)disableNetworkActivityIndicatorWithObject:(id <NSObject>)object;
 - (void)forceDisableNetworkActivityIndicatorWithObject:(id <NSObject>)object;
+- (NSInteger)numberOfObjectEnabled:(id <NSObject>)object;
 
 - (void)networkActivityIndicator:(BOOL)on;
 
