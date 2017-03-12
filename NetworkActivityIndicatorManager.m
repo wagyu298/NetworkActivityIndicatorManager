@@ -18,7 +18,13 @@
 
 - (void)networkActivityIndicator:(BOOL)on
 {
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = on;
+    if ([NSThread isMainThread]) {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = on;
+    } else {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = on;
+        });
+    }
 }
 
 @end
