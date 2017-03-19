@@ -14,10 +14,4 @@
            getter=sna_networkActivityIndicatorVisible,
            setter=sna_setNetworkActivityIndicatorVisible:) BOOL sna_networkActivityIndicatorVisible;
 
-/// @brief Same as sna_networkActivityIndicatorVisible = YES.
-- (void)sna_enableNetworkActivityIndicator;
-
-/// @brief Same as sna_networkActivityIndicatorVisible = NO.
-- (void)sna_disableNetworkActivityIndicator;
-
 @end
