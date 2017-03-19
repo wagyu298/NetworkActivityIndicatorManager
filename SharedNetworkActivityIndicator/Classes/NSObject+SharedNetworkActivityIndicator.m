@@ -7,16 +7,6 @@
 
 @implementation NSObject (SharedNetworkActivityIndicator)
 
-- (void)sna_enableNetworkActivityIndicator
-{
-    [[SNASharedNetworkActivityIndicator sharedIndicator] enableNetworkActivityIndicatorWithObject:self];
-}
-
-- (void)sna_disableNetworkActivityIndicator
-{
-    [[SNASharedNetworkActivityIndicator sharedIndicator] disableNetworkActivityIndicatorWithObject:self];
-}
-
 - (BOOL)sna_networkActivityIndicatorVisible
 {
     return [UIApplication sharedApplication].networkActivityIndicatorVisible;
@@ -26,9 +16,9 @@
 {
     [self willChangeValueForKey:@"networkActivityIndicatorVisible"];
     if (networkActivityIndicatorVisible) {
-        [self sna_enableNetworkActivityIndicator];
+        [[SNASharedNetworkActivityIndicator sharedIndicator] enableNetworkActivityIndicatorWithObject:self];
     } else {
-        [self sna_disableNetworkActivityIndicator];
+        [[SNASharedNetworkActivityIndicator sharedIndicator] disableNetworkActivityIndicatorWithObject:self];
     }
     [self didChangeValueForKey:@"networkActivityIndicatorVisible"];
 }
